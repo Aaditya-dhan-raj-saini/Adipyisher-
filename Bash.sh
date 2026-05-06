@@ -1,0 +1,3 @@
+export ADMIN_USER=your_admin_username
+export ADMIN_PASS=your_strong_password
+export APP_PORT=5000
