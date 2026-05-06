@@ -1,0 +1,10 @@
+phishaware/
+├── app.py                  # Main Flask application
+├── requirements.txt        # Python dependencies
+├── templates/
+│   ├── login.html          # Fake Instagram login page
+│   ├── login_2fa.html      # Fake 2FA page
+│   └── admin.html          # Admin panel
+├── static/
+│   └── style.css           # Styling matching Instagram's look
+└── README.md               # Documentation
